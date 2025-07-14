@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uber Demand Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Chart.js for trend visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Uber Demand Predictor</h1>
+    <form id="uploadForm">
+      <label for="csvFile">Upload Trip Data CSV:</label>
+      <input type="file" id="csvFile" accept=".csv" required>
+      <button type="submit">Upload & Visualize</button>
+    </form>
+    <div id="predictionSection" style="display:none;">
+      <h2>Predict Future Trip Counts</h2>
+      <input type="number" id="predictDays" min="1" max="30" value="7"/>
+      <button id="predictBtn">Predict</button>
+      <div id="predictionResult"></div>
+    </div>
+    <div>
+      <h2>Trip Trends</h2>
+      <canvas id="trendChart"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
